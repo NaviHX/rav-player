@@ -74,7 +74,7 @@ fn play(options: Opt) -> Result<Statistic> {
     if options.audio {
         audio_process = Some(
             process::Command::new("ffplay")
-                .args(["-vn", "-nodisp", &file_name])
+                .args(["-vn", "-nodisp", "-autoexit",  &file_name])
                 .stderr(Stdio::null())
                 .stdout(Stdio::null())
                 .spawn()
