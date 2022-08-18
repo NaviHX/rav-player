@@ -92,7 +92,7 @@ fn play(options: Opt) -> Result<Statistic> {
     while cap.read(&mut frame)? {
         // TODO: render the frame here
         if frame.empty() {
-            continue;
+            break;
         }
 
         opencv::imgproc::resize(
